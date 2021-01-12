@@ -3,7 +3,7 @@ function handleSubmit(event) {
 
   // check what text was put into the form field
   let formText = document.getElementById("name").value;
-  const localhost = "http://localhost:8081/test";
+  const localhost = "http://localhost:8081/addURL";
   Client.checkForName(formText);
 
   console.log("::: Form Submitted :::");
