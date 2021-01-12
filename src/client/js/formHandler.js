@@ -24,10 +24,10 @@ function handleSubmit(event) {
         document.getElementById("results").innerHTML = res.message;
         document.getElementById("subjectivity").innerHTML =
           res.body.subjectivity;
-        document.getElementById("confidence").innerHTML = res.body.confidence;
-        document.getElementById("agreement").innerHTML = res.body.agreement;
-        document.getElementById("irony").innerHTML = res.body.irony;
-        document.getElementById("score").innerHTML = res.body.score;
+        document.getElementById("confidence").innerHTML = "the confidence " +res.body.confidence;
+        document.getElementById("agreement").innerHTML = "the agreement " +res.body.agreement;
+        document.getElementById("irony").innerHTML = "the irony " +res.body.irony;
+        document.getElementById("score").innerHTML = "the score " + res.body.score;
       });
     try {
       let newData = await res.json();
