@@ -52,7 +52,13 @@ app.post("/addURL", addURL);
 function addURL(req, res) {
   const res = await fetch(
     `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&lang=auto&txt=${req.body.name}`
-  );
+  );  
+
+  projectData["subjectivity"] = req.body.subjectivity;  
+  projectData["confidence"] = req.body.confidence;
+  projectData["agreement"] = req.body.agreement;
+  projectData["irony"] = req.body.irony;
+  projectData["score"] = req.body.score;
 
   console.log(res);
   try {
