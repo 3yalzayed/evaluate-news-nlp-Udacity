@@ -22,6 +22,12 @@ function handleSubmit(event) {
       .then((res) => res.json())
       .then(function (res) {
         document.getElementById("results").innerHTML = res.message;
+        document.getElementById("subjectivity").innerHTML =
+          res.body.subjectivity;
+        document.getElementById("confidence").innerHTML = res.body.confidence;
+        document.getElementById("agreement").innerHTML = res.body.agreement;
+        document.getElementById("irony").innerHTML = res.body.irony;
+        document.getElementById("score").innerHTML = res.body.score;
       });
     try {
       let newData = await res.json();
