@@ -1,5 +1,6 @@
 function handleSubmit(event) {
   event.preventDefault();
+  const fetch = require("node-fetch");
 
   // check what text was put into the form field
   let formText = document.getElementById("name").value;
@@ -22,12 +23,6 @@ function handleSubmit(event) {
       .then((res) => res.json())
       .then(function (res) {
         document.getElementById("results").innerHTML = res.message;
-        document.getElementById("subjectivity").innerHTML =
-          res.body.subjectivity;
-        document.getElementById("confidence").innerHTML = "the confidence " +res.body.confidence;
-        document.getElementById("agreement").innerHTML = "the agreement " +res.body.agreement;
-        document.getElementById("irony").innerHTML = "the irony " +res.body.irony;
-        document.getElementById("score").innerHTML = "the score " + res.body.score;
       });
     try {
       let newData = await res.json();
