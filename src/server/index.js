@@ -11,11 +11,12 @@ var textapi = {
 console.log(`Your API key is ${process.env.API_KEY}`);
 
 // variables
-const express = require("express");
+var express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+const fetch = require("node-fetch");
 // Initialize the main project folder
 app.use(express.static("dist"));
 
@@ -29,7 +30,7 @@ app.use(express.json());
 app.use(express.static("dist"));
 
 // Cors for cross origin allowance
-const cors = require("cors");
+var cors = require("cors");
 app.use(cors());
 
 console.log(__dirname);
@@ -49,23 +50,22 @@ app.listen(8081, function () {
 // });
 
 app.post("/addURL", addURL);
-function addURL(req, res) {
-  const res = await fetch(
+async function addURL(req, res) {
+  const ras = await fetch(
     `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&lang=auto&txt=${req.body.name}`
-  );  
+  );
 
-  projectData["subjectivity"] = req.body.subjectivity;  
+  projectData["subjectivity"] = req.body.subjectivity;
   projectData["confidence"] = req.body.confidence;
   projectData["agreement"] = req.body.agreement;
   projectData["irony"] = req.body.irony;
   projectData["score"] = req.body.score;
 
-  console.log(res);
   try {
     const data = await res.json();
-    console.log(data)
+    console.log(data);
     return data;
-  }catch(error) {
+  } catch (error) {
     console.log("error", error);
   }
 }
