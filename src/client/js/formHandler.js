@@ -1,6 +1,5 @@
 function handleSubmit(event) {
   event.preventDefault();
-  const fetch = require("node-fetch");
 
   // check what text was put into the form field
   let formText = document.getElementById("name").value;
