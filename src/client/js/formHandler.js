@@ -30,6 +30,7 @@ function handleSubmit(event) {
       console.log("error", error);
     }
   };
+  postData(localhost);
 }
 
 export { handleSubmit };
