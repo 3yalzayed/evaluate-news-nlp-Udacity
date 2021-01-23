@@ -52,8 +52,7 @@ app.listen(8081, function () {
 app.post("/addURL", addURL);
 async function addURL(req, res) {
   const ras = await fetch(
-    `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&lang=auto&txt=${req.body.name}`
-  );
+          `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&lang=auto&url=${req.body.url}`  );
   try {
     const data = await res.json();
     console.log(data);
