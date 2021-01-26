@@ -41,6 +41,5 @@ module.exports = {
       protectWebpackAssets: false,
     }),
     // new WorkboxPlugin.GenerateSW(),
-    new WorkboxPlugin.GenerateSW(),
   ],
 };
