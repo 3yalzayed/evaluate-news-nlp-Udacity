@@ -3,15 +3,14 @@ function handleSubmit(event) {
 
   // check what text was put into the form field
   let formText = document.getElementById("name").value;
-  const localhost = "http://localhost:8081/addURL";
-  Client.checkForName(formText);
+  const url = "http://localhost:8081/add-url";
 
   console.log("::: Form Submitted :::");
 
   // Function to POST data
   const postData = async (url = "", data = {}) => {
     console.log(data);
-    let res = await fetch(localhost, {
+    let res = await fetch(url, {
       method: "POST",
       credentials: "same-origin",
       headers: {
@@ -27,9 +26,13 @@ function handleSubmit(event) {
       console.log("error", error);
     }
   };
-  postData(localhost, { url: formText }).then(function (res) {
+  postData(url, { url: formText }).then(function (res) {
     console.log(res);
-    document.getElementById("results").innerHTML = res.message;     
+    document.getElementById("score_tag").innerText = res.score_tag;
+    document.getElementById("agreement").innerText = res.agreement;
+    document.getElementById("subjectivity").innerText = res.subjectivity;
+    document.getElementById("irony").innerText = res.irony;
+    document.getElementById("confidence").innerText = res.confidence;
   });
 }
 
