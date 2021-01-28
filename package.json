@@ -9,11 +9,13 @@
     "build-dev": "webpack-dev-server  --config webpack.dev.js --open"
   },
   "keywords": [],
-  "author": "",
+  "author": "Sulatan",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "aylien_textapi": "^0.7.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "node-fetch": "^2.6.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "webpack": "^4.35.3",
@@ -27,12 +29,12 @@
     "css-loader": "^5.0.1",
     "html-webpack-plugin": "^3.2.0",
     "jest": "^26.6.3",
-    "mini-css-extract-plugin": "^1.3.3",
+    "mini-css-extract-plugin": "^1.3.4",
     "node-sass": "^5.0.0",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
-    "sass-loader": "^10.1.0",
+    "sass-loader": "^10.1.1",
     "style-loader": "^2.0.0",
-    "terser-webpack-plugin": "^5.0.3",
+    "terser-webpack-plugin": "^5.1.1",
     "webpack-dev-server": "^3.7.2",
     "workbox-webpack-plugin": "^6.0.2"
   }
